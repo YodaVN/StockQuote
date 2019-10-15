@@ -8,8 +8,7 @@
 
 import Foundation
 
-// MARK: - Welcome
-class Stock: Codable {
+struct Stock: Codable {
     let symbolsRequested, symbolsReturned: Int
     let data: [Datum]
 
@@ -27,13 +26,20 @@ class Stock: Codable {
 }
 
 // MARK: - Datum
-class Datum: Codable {
-    let symbol, name, currency, price: String
-    let priceOpen, dayHigh, dayLow, the52_WeekHigh: String
-    let the52_WeekLow, dayChange, changePct, closeYesterday: String
-    let marketCap, volume, volumeAvg, shares: String
-    let stockExchangeLong, stockExchangeShort, timezone, timezoneName: String
-    let gmtOffset, lastTradeTime, pe, eps: String
+struct Datum: Codable, Equatable {
+    
+    let symbol, name: String
+    let currency: String?
+    let price: String
+    let priceOpen: String?
+    let dayHigh, dayLow: String
+    let the52_WeekHigh, the52_WeekLow: String?
+    let dayChange: String
+    let changePct, closeYesterday, marketCap, volume: String?
+    let volumeAvg, shares, stockExchangeLong, stockExchangeShort: String?
+    let timezone, timezoneName, gmtOffset: String?
+    let lastTradeTime: String
+    let pe, eps: String?
 
     enum CodingKeys: String, CodingKey {
         case symbol, name, currency, price
@@ -58,7 +64,7 @@ class Datum: Codable {
         case pe, eps
     }
 
-    init(symbol: String, name: String, currency: String, price: String, priceOpen: String, dayHigh: String, dayLow: String, the52_WeekHigh: String, the52_WeekLow: String, dayChange: String, changePct: String, closeYesterday: String, marketCap: String, volume: String, volumeAvg: String, shares: String, stockExchangeLong: String, stockExchangeShort: String, timezone: String, timezoneName: String, gmtOffset: String, lastTradeTime: String, pe: String, eps: String) {
+    init(symbol: String, name: String, currency: String?, price: String, priceOpen: String?, dayHigh: String, dayLow: String, the52_WeekHigh: String?, the52_WeekLow: String?, dayChange: String, changePct: String?, closeYesterday: String?, marketCap: String?, volume: String?, volumeAvg: String?, shares: String?, stockExchangeLong: String?, stockExchangeShort: String?, timezone: String?, timezoneName: String?, gmtOffset: String?, lastTradeTime: String, pe: String?, eps: String?) {
         self.symbol = symbol
         self.name = name
         self.currency = currency

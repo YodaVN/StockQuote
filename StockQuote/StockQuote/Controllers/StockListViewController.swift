@@ -11,6 +11,7 @@ import UIKit
 class StockListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    var viewModel: [StockViewModel] = []
     let cellId = "StockCell"
     
     override func viewDidLoad() {
