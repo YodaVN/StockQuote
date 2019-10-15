@@ -38,7 +38,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+0.02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZG-St-1Gm">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+0.02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fZG-St-1Gm">
                         <rect key="frame" x="266" y="43" width="45" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,6 +52,8 @@
                     <constraint firstItem="BD4-92-PY4" firstAttribute="top" secondItem="irI-Sy-kkl" secondAttribute="top" constant="14" id="N79-rl-4Tu"/>
                     <constraint firstItem="uz9-nA-Z07" firstAttribute="leading" secondItem="irI-Sy-kkl" secondAttribute="leading" constant="20" id="b2a-Nm-S1L"/>
                     <constraint firstItem="uz9-nA-Z07" firstAttribute="top" secondItem="BD4-92-PY4" secondAttribute="bottom" constant="8" id="oWY-Ht-87W"/>
+                    <constraint firstItem="fZG-St-1Gm" firstAttribute="baseline" secondItem="uz9-nA-Z07" secondAttribute="baseline" id="pBa-fM-L41"/>
+                    <constraint firstItem="fZG-St-1Gm" firstAttribute="trailing" secondItem="x0f-Sf-43m" secondAttribute="trailing" id="rgW-PJ-0dU"/>
                 </constraints>
                 <viewLayoutGuide key="safeArea" id="XLa-j0-nMS"/>
             </tableViewCellContentView>
@@ -62,6 +64,12 @@
                 <constraint firstAttribute="trailing" secondItem="irI-Sy-kkl" secondAttribute="trailing" id="teP-HB-WD7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="R0F-EO-kUH"/>
+            <connections>
+                <outlet property="dayChange" destination="fZG-St-1Gm" id="RMJ-ex-aTa"/>
+                <outlet property="name" destination="uz9-nA-Z07" id="0iu-zR-pL2"/>
+                <outlet property="price" destination="x0f-Sf-43m" id="LRx-QU-jZv"/>
+                <outlet property="symbol" destination="BD4-92-PY4" id="RzQ-mA-gSE"/>
+            </connections>
             <point key="canvasLocation" x="64.492753623188406" y="107.8125"/>
         </tableViewCell>
     </objects>

@@ -32,7 +32,10 @@ class StockViewModel {
     }
     
     private static func price(_ price: String) -> String {
-        let convertPrice = "\(price) $"
+        if price == "" {
+            return "$0"
+        }
+        let convertPrice = "$\(price)"
         return convertPrice
     }
     
@@ -57,6 +60,9 @@ class StockViewModel {
     }
     
     func configure(_ cell: StockDetailCell) {
-        
+        cell.symbol.text = symbol
+        cell.name.text = name
+        cell.price.text = price
+        cell.dayChange.text = String(dayChange)
     }
 }

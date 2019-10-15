@@ -38,7 +38,7 @@ class StockViewModelTests: XCTestCase {
     //MARK: when
     func whenConfigureStockDetailCell() {
         givenStockDetailCell()
-        //        sut.configure(cell)
+        sut.configure(cell)
     }
     
     func setUpViewModel(symbol: String = "NKE", name: String = "NIKE", currency: String = "USD", price: String = "35.6", priceOpen: String = "12", dayHigh: String = "50", dayLow: String = "20", the52_WeekHigh: String = "70", the52_WeekLow: String = "10", dayChange: String = "-0.5", changePct: String = "3%", closeYesterday: String = "40", marketCap: String = "123", volume: String = "5", volumeAvg: String = "5", shares: String = "5", stockExchangeLong: String = "5", stockExchangeShort: String = "6", timezone: String = "EST", timezoneName: String = "+7", gmtOffset: String = "+6", lastTradeTime: String = "2019-10-15 13:16:51", pe: String = "pe", eps: String = "eps") {
@@ -50,7 +50,7 @@ class StockViewModelTests: XCTestCase {
     
     //MARK: tests Init
     func test_initDatum_setsDatum() {
-      XCTAssertEqual(sut.datum, datum)
+        XCTAssertEqual(sut.datum, datum)
     }
     
     func test_priceEqual() {
@@ -58,7 +58,15 @@ class StockViewModelTests: XCTestCase {
         setUpViewModel(price: "123.6")
         
         //then
-        XCTAssertEqual(sut.price, "123.6 $")
+        XCTAssertEqual(sut.price, "$123.6")
+    }
+    
+    func test_priceEqualNull() {
+        //when
+        setUpViewModel(price: "")
+        
+        //then
+        XCTAssertEqual(sut.price, "$0")
     }
     
     func test_dayChangeEqual() {
@@ -69,11 +77,60 @@ class StockViewModelTests: XCTestCase {
         XCTAssertEqual(sut.dayChange, -5.4)
     }
     
+    func test_dayChangeEqualNull() {
+        //when
+        setUpViewModel(dayChange: "")
+        
+        //then
+        XCTAssertEqual(sut.dayChange, 0)
+    }
+    
     func test_lastTradeTimeEqual() {
         //when
         setUpViewModel(lastTradeTime: "2019-10-15 13:16:51")
         
         //then
         XCTAssertEqual(sut.lastTradeTime, "Oct 15,2019 13:16:51")
+    }
+    
+    func test_lastTradeTimeEqualNull() {
+        //when
+        setUpViewModel(lastTradeTime: "")
+        
+        //then
+        XCTAssertEqual(sut.lastTradeTime, "")
+    }
+    
+    // MARK: - Tests Cell config
+    func test_configCell_setsSymbol() {
+        // when
+        whenConfigureStockDetailCell()
+        
+        // then
+        XCTAssertEqual(cell.symbol.text, sut.symbol)
+    }
+    
+    func test_configCell_setsName() {
+        // when
+        whenConfigureStockDetailCell()
+
+        // then
+        XCTAssertEqual(cell.symbol.text, sut.symbol)
+    }
+
+    func test_configCell_setsPrice() {
+        // when
+        whenConfigureStockDetailCell()
+
+        // then
+        XCTAssertEqual(cell.price.text, sut.price)
+    }
+
+    func test_configureCell_setsDayChange() {
+        // when
+        whenConfigureStockDetailCell()
+
+        // then
+        XCTAssertEqual(cell.dayChange.text, String(sut.dayChange))
     }
 }
