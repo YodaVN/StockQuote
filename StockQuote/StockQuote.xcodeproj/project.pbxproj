@@ -12,6 +12,8 @@
 		D7D1D19223563C260037EBD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D19023563C260037EBD3 /* Main.storyboard */; };
 		D7D1D19423563C280037EBD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D19323563C280037EBD3 /* Assets.xcassets */; };
 		D7D1D19723563C280037EBD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D19523563C280037EBD3 /* LaunchScreen.storyboard */; };
+		D7D1D1B223563D5C0037EBD3 /* StockListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D1B123563D5C0037EBD3 /* StockListView.xib */; };
+		D7D1D1B623563DF20037EBD3 /* StockListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1B523563DF20037EBD3 /* StockListViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		D7D1D19823563C280037EBD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7D1D19D23563C280037EBD3 /* StockQuoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockQuoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D1D1A323563C280037EBD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7D1D1B123563D5C0037EBD3 /* StockListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockListView.xib; sourceTree = "<group>"; };
+		D7D1D1B523563DF20037EBD3 /* StockListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		D7D1D1A023563C280037EBD3 /* StockQuoteTests */ = {
 			isa = PBXGroup;
 			children = (
+				D7D1D1B323563DD20037EBD3 /* CaseTests */,
 				D7D1D1A323563C280037EBD3 /* Info.plist */,
 			);
 			path = StockQuoteTests;
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				D7D1D1B023563CCB0037EBD3 /* Storyboard */,
+				D7D1D1B123563D5C0037EBD3 /* StockListView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +137,22 @@
 				D7D1D19523563C280037EBD3 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D7D1D1B323563DD20037EBD3 /* CaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7D1D1B423563DDB0037EBD3 /* Controllers */,
+			);
+			path = CaseTests;
+			sourceTree = "<group>";
+		};
+		D7D1D1B423563DDB0037EBD3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D7D1D1B523563DF20037EBD3 /* StockListViewControllerTests.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +208,7 @@
 					};
 					D7D1D19C23563C280037EBD3 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = D7D1D18623563C260037EBD3;
 					};
 				};
@@ -215,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D1D19723563C280037EBD3 /* LaunchScreen.storyboard in Resources */,
+				D7D1D1B223563D5C0037EBD3 /* StockListView.xib in Resources */,
 				D7D1D19423563C280037EBD3 /* Assets.xcassets in Resources */,
 				D7D1D19223563C260037EBD3 /* Main.storyboard in Resources */,
 			);
@@ -243,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D1D1B623563DF20037EBD3 /* StockListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +456,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W92HWWDY8H;
 				INFOPLIST_FILE = StockQuoteTests/Info.plist;
@@ -442,6 +468,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "T-Mobile.StockQuoteTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StockQuote.app/StockQuote";
@@ -453,6 +480,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W92HWWDY8H;
 				INFOPLIST_FILE = StockQuoteTests/Info.plist;
