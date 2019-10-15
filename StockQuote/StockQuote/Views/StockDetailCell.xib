@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockCell" rowHeight="80" id="HgM-F1-26m" customClass="StockDetailCell" customModule="StockQuote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="331" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HgM-F1-26m" id="irI-Sy-kkl" customClass="StockDetailCell" customModule="StockQuote" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="331" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AAPL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BD4-92-PY4">
+                        <rect key="frame" x="20" y="14" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Inc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uz9-nA-Z07">
+                        <rect key="frame" x="20" y="43" width="72" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="235.93" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x0f-Sf-43m">
+                        <rect key="frame" x="256" y="14" width="55" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+0.02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZG-St-1Gm">
+                        <rect key="frame" x="266" y="43" width="45" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BD4-92-PY4" firstAttribute="leading" secondItem="irI-Sy-kkl" secondAttribute="leading" constant="20" id="J16-u0-ZTw"/>
+                    <constraint firstItem="BD4-92-PY4" firstAttribute="top" secondItem="irI-Sy-kkl" secondAttribute="top" constant="14" id="N79-rl-4Tu"/>
+                    <constraint firstItem="uz9-nA-Z07" firstAttribute="leading" secondItem="irI-Sy-kkl" secondAttribute="leading" constant="20" id="b2a-Nm-S1L"/>
+                    <constraint firstItem="uz9-nA-Z07" firstAttribute="top" secondItem="BD4-92-PY4" secondAttribute="bottom" constant="8" id="oWY-Ht-87W"/>
+                </constraints>
+                <viewLayoutGuide key="safeArea" id="XLa-j0-nMS"/>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="irI-Sy-kkl" firstAttribute="leading" secondItem="HgM-F1-26m" secondAttribute="leading" id="dLD-yo-dHb"/>
+                <constraint firstAttribute="bottom" secondItem="irI-Sy-kkl" secondAttribute="bottom" id="h66-UI-uac"/>
+                <constraint firstItem="irI-Sy-kkl" firstAttribute="top" secondItem="HgM-F1-26m" secondAttribute="top" id="ofD-F7-3Hg"/>
+                <constraint firstAttribute="trailing" secondItem="irI-Sy-kkl" secondAttribute="trailing" id="teP-HB-WD7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="R0F-EO-kUH"/>
+            <point key="canvasLocation" x="64.492753623188406" y="107.8125"/>
+        </tableViewCell>
+    </objects>
+</document>

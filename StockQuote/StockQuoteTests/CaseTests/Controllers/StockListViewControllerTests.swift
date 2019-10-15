@@ -24,8 +24,20 @@ class StockListViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: - Tests UITableView
     func test_controller_hasTableView() {
         //then
         XCTAssertNotNil(sut.tableView, "StockListViewController should have a tableview")
+    }
+    
+    func test_tableView_numberOfRowsInSection_returns1() {
+      // given
+      let expected = 1
+      
+      // when
+      let actual = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
+      
+      // then
+      XCTAssertEqual(actual, expected)
     }
 }
