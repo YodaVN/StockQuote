@@ -15,7 +15,8 @@ class StockDetailViewControllerTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        sut =  StockDetailViewController(nibName: "StockDetailView", bundle: nil)
+        sut = StockDetailViewController(nibName: "StockDetailView", bundle: nil)
+        sut.loadViewIfNeeded()
     }
 
     override func tearDown() {
@@ -23,8 +24,28 @@ class StockDetailViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_shouldShowCountryName() {
+    func testInit_notNil() {
         //then
         XCTAssertNotNil(sut)
+    }
+    
+    func test_shouldShowSymbolLabel() {
+        //then
+        XCTAssertEqual("AAPL", sut.symbol.text)
+    }
+    
+    func test_shouldShowNameLabel() {
+        //then
+        XCTAssertEqual("Apple Inc", sut.name.text)
+    }
+    
+    func test_shouldShowDayHighLabel() {
+        //then
+        XCTAssertEqual("123.00", sut.dayHigh.text)
+    }
+    
+    func test_shouldShowDayLowLabel() {
+        //then
+        XCTAssertEqual("123.00", sut.dayLow.text)
     }
 }

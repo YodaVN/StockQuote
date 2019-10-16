@@ -12,7 +12,6 @@ class StockListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var viewModels: [StockViewModel] = []
-    var delegate: DelegateDatasourceProtocol?
     let cellId = "StockCell"
     
     override func viewDidLoad() {
@@ -80,7 +79,8 @@ extension StockListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let stockDetailViewController = StockDetailViewController(nibName: "StockDetailView", bundle: nil)
+        self.navigationController?.pushViewController(stockDetailViewController, animated: true)
     }
 }
 

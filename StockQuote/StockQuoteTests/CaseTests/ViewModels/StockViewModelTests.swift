@@ -90,7 +90,7 @@ class StockViewModelTests: XCTestCase {
         setUpViewModel(lastTradeTime: "2019-10-15 13:16:51")
         
         //then
-        XCTAssertEqual(sut.lastTradeTime, "Oct 15,2019 13:16:51")
+        XCTAssertEqual(sut.lastTradeTime, "Oct 15, 2019 13:16:51")
     }
     
     func test_lastTradeTimeEqualNull() {
