@@ -23,6 +23,10 @@ class StockListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "StockDetailCell", bundle: nil), forCellReuseIdentifier: cellId)
+        
+//        StockClient.shared.fetchStocks { (stocks, error) in
+//
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

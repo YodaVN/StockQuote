@@ -16,13 +16,14 @@
 		D7D1D1B823563F1B0037EBD3 /* StockDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1B723563F1B0037EBD3 /* StockDetailCell.swift */; };
 		D7D1D1BA235641190037EBD3 /* StockDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D1B9235641190037EBD3 /* StockDetailCell.xib */; };
 		D7D1D1BD23565A4A0037EBD3 /* StockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1BC23565A4A0037EBD3 /* StockTest.swift */; };
-		D7D1D1C023565A7B0037EBD3 /* Stock.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D1BF23565A7B0037EBD3 /* Stock.json */; };
-		D7D1D1C223565A850037EBD3 /* StockMissingValuesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D1C123565A850037EBD3 /* StockMissingValuesResponse.json */; };
+		D7D1D1C023565A7B0037EBD3 /* Datum.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D1BF23565A7B0037EBD3 /* Datum.json */; };
+		D7D1D1C223565A850037EBD3 /* Stock_ValidJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D1C123565A850037EBD3 /* Stock_ValidJSON.json */; };
 		D7D1D1C523565AA70037EBD3 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1C423565AA70037EBD3 /* Stock.swift */; };
 		D7D1D1CA23565B5C0037EBD3 /* StockViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1C923565B5C0037EBD3 /* StockViewModelTests.swift */; };
 		D7D1D1CC23565B9C0037EBD3 /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1CB23565B9C0037EBD3 /* StockViewModel.swift */; };
 		D7D1D1D023569CD20037EBD3 /* StockClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1CF23569CD20037EBD3 /* StockClientTests.swift */; };
 		D7D1D1D223569D060037EBD3 /* StockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1D123569D060037EBD3 /* StockClient.swift */; };
+		D7D1D1D62356D2670037EBD3 /* Stock_InvalidJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D1D32356A4D90037EBD3 /* Stock_InvalidJSON.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,13 +50,14 @@
 		D7D1D1B723563F1B0037EBD3 /* StockDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailCell.swift; sourceTree = "<group>"; };
 		D7D1D1B9235641190037EBD3 /* StockDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockDetailCell.xib; sourceTree = "<group>"; };
 		D7D1D1BC23565A4A0037EBD3 /* StockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTest.swift; sourceTree = "<group>"; };
-		D7D1D1BF23565A7B0037EBD3 /* Stock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Stock.json; sourceTree = "<group>"; };
-		D7D1D1C123565A850037EBD3 /* StockMissingValuesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StockMissingValuesResponse.json; sourceTree = "<group>"; };
+		D7D1D1BF23565A7B0037EBD3 /* Datum.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Datum.json; sourceTree = "<group>"; };
+		D7D1D1C123565A850037EBD3 /* Stock_ValidJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Stock_ValidJSON.json; sourceTree = "<group>"; };
 		D7D1D1C423565AA70037EBD3 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		D7D1D1C923565B5C0037EBD3 /* StockViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModelTests.swift; sourceTree = "<group>"; };
 		D7D1D1CB23565B9C0037EBD3 /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
 		D7D1D1CF23569CD20037EBD3 /* StockClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockClientTests.swift; sourceTree = "<group>"; };
 		D7D1D1D123569D060037EBD3 /* StockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockClient.swift; sourceTree = "<group>"; };
+		D7D1D1D32356A4D90037EBD3 /* Stock_InvalidJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Stock_InvalidJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,8 +186,9 @@
 		D7D1D1BE23565A620037EBD3 /* Datas */ = {
 			isa = PBXGroup;
 			children = (
-				D7D1D1BF23565A7B0037EBD3 /* Stock.json */,
-				D7D1D1C123565A850037EBD3 /* StockMissingValuesResponse.json */,
+				D7D1D1BF23565A7B0037EBD3 /* Datum.json */,
+				D7D1D1C123565A850037EBD3 /* Stock_ValidJSON.json */,
+				D7D1D1D32356A4D90037EBD3 /* Stock_InvalidJSON.json */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -323,8 +326,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7D1D1C223565A850037EBD3 /* StockMissingValuesResponse.json in Resources */,
-				D7D1D1C023565A7B0037EBD3 /* Stock.json in Resources */,
+				D7D1D1C223565A850037EBD3 /* Stock_ValidJSON.json in Resources */,
+				D7D1D1C023565A7B0037EBD3 /* Datum.json in Resources */,
+				D7D1D1D62356D2670037EBD3 /* Stock_InvalidJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

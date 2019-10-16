@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Stock: Codable {
+struct Stock: Codable, Equatable {
     let symbolsRequested, symbolsReturned: Int
     let data: [Datum]
 

@@ -12,13 +12,12 @@ import XCTest
 class StockClientTests: XCTestCase {
     var sut: StockClient!
     var baseURL: URL!
-    var session: URLSession!
     var mockSession: MockURLSession!
     
     override func setUp() {
         super.setUp()
         baseURL = URL(string: "https://api.worldtradingdata.com/api/v1/")!
-        mockSession = MockURLSession()
+        mockSession = MockURLSession(data: nil, urlResponse: nil, error: nil)
         sut = StockClient(baseURL: baseURL, session: mockSession)
     }
     override func tearDown() {
@@ -26,6 +25,24 @@ class StockClientTests: XCTestCase {
         mockSession = nil
         sut = nil
         super.tearDown()
+    }
+    
+    func whenFetchStocks(data: Data? = nil, error: Error? = nil) -> (calledCompletion: Bool, stocks: Stock?, error: Error?) {
+        var calledCompletion = false
+        var receivedStocks: Stock?  = nil
+        var receivedError: Error? = nil
+        
+        let mockURLSession  = MockURLSession(data: data, urlResponse: nil, error: nil)
+        sut.session = mockURLSession
+        
+        let mockTask = sut.fetchStocks { (stocks, error) in
+            calledCompletion = true
+            receivedStocks = stocks
+            receivedError = error as NSError?
+        } as! MockURLSessionDataTask
+        
+        mockTask.completionHandler(data, nil, error)
+        return (calledCompletion, receivedStocks, receivedError)
     }
     
     func testInit_baseURL() {
@@ -38,34 +55,83 @@ class StockClientTests: XCTestCase {
         XCTAssertEqual(sut.session, mockSession)
     }
     
-    func test_getDogs_callsExpectedURL() {
-        // given
-        let fetchStocksURL = URL(string: "https://api.worldtradingdata.com/api/v1/", relativeTo: baseURL)!
+    func testFetchStocks_withExpectedURLHostAndPath() {
+        sut.session = mockSession
+        sut.fetchStocks(completion: { (stocks, error) in })
+        XCTAssertEqual(mockSession.cachedUrl?.host, "api.worldtradingdata.com")
+        XCTAssertEqual(mockSession.cachedUrl?.path, "/api/v1/stock")
+    }
+    
+    func testFetchStock_success() {
+        //given
+        guard let path = Bundle(for: type(of: self)).path(forResource: "Stock_ValidJSON", ofType: "json") else {
+            fatalError("Can't find Stock_ValidJSON.json file")
+        }
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path))
         
-        // when
-        let mockTask = sut.fetchStocks() { _, _ in } as! MockURLSessionDataTask
+        let stocks = try! JSONDecoder().decode(Stock.self, from: data)
         
-         //then
-        XCTAssertEqual(mockTask.url, fetchStocksURL)
+        //when
+        let result = whenFetchStocks(data: data, error: nil)
+        
+        // then
+        XCTAssertTrue(result.calledCompletion)
+        XCTAssertEqual(result.stocks, stocks)
+        XCTAssertNil(result.error)
+    }
+    
+    func testFetchStock_fail() {
+        //given
+        guard let path = Bundle(for: type(of: self)).path(forResource: "Stock_InvalidJSON", ofType: "json") else {
+            fatalError("Can't find Stock_InvalidJSON.json file")
+        }
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path))
+        
+        //when
+        let result = whenFetchStocks(data: data, error: nil)
+        
+        //then
+        XCTAssertTrue(result.calledCompletion)
+        XCTAssertNil(result.stocks)
     }
 }
 
 class MockURLSession: URLSession {
+    private let mockTask: MockURLSessionDataTask
+    var cachedUrl: URL?
+
+
+    init(data: Data?, urlResponse: URLResponse?, error: Error?) {
+        mockTask = MockURLSessionDataTask(data: data, urlResponse: urlResponse, error: error)
+    }
+
     override func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        return MockURLSessionDataTask(completionHandler: completionHandler, url: url)
+        self.cachedUrl = url
+        mockTask.completionHandler = completionHandler
+        return mockTask
     }
 }
 
 class MockURLSessionDataTask: URLSessionDataTask {
-    var completionHandler: (Data?, URLResponse?, Error?) -> Void
-    var url: URL
-    init(completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void, url: URL) {
-        self.completionHandler = completionHandler
-        self.url = url
-        super.init()
+    private let data: Data?
+    private let urlResponse: URLResponse?
+
+    private let _error: Error?
+    override var error: Error? {
+        return _error
     }
-    
+
+    var completionHandler: ((Data?, URLResponse?, Error?) -> Void)!
+
+    init(data: Data?, urlResponse: URLResponse?, error: Error?) {
+        self.data = data
+        self.urlResponse = urlResponse
+        self._error = error
+    }
+
     override func resume() {
-        
+        DispatchQueue.main.async {
+            self.completionHandler(self.data, self.urlResponse, self.error)
+        }
     }
 }
