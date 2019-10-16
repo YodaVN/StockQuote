@@ -16,4 +16,8 @@ class StockClient {
         self.baseURL = baseURL
         self.session = session
     }
+    
+    func fetchStocks(completion:@escaping ([Datum]?, Error?) -> Void) -> URLSessionDataTask {
+        return session.dataTask(with: baseURL) { _, _, _ in }
+    }
 }
