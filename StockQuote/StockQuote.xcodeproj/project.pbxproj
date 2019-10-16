@@ -21,6 +21,8 @@
 		D7D1D1C523565AA70037EBD3 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1C423565AA70037EBD3 /* Stock.swift */; };
 		D7D1D1CA23565B5C0037EBD3 /* StockViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1C923565B5C0037EBD3 /* StockViewModelTests.swift */; };
 		D7D1D1CC23565B9C0037EBD3 /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1CB23565B9C0037EBD3 /* StockViewModel.swift */; };
+		D7D1D1D023569CD20037EBD3 /* StockClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1CF23569CD20037EBD3 /* StockClientTests.swift */; };
+		D7D1D1D223569D060037EBD3 /* StockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1D123569D060037EBD3 /* StockClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		D7D1D1C423565AA70037EBD3 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		D7D1D1C923565B5C0037EBD3 /* StockViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModelTests.swift; sourceTree = "<group>"; };
 		D7D1D1CB23565B9C0037EBD3 /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
+		D7D1D1CF23569CD20037EBD3 /* StockClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockClientTests.swift; sourceTree = "<group>"; };
+		D7D1D1D123569D060037EBD3 /* StockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 				D7D1D1AD23563C450037EBD3 /* Controllers */,
 				D7D1D1C323565A990037EBD3 /* Models */,
 				D7D1D1C623565B010037EBD3 /* ViewModels */,
+				D7D1D1CD23569C500037EBD3 /* Service */,
 				D7D1D1AF23563C580037EBD3 /* Resources */,
 			);
 			path = StockQuote;
@@ -152,6 +157,7 @@
 		D7D1D1B323563DD20037EBD3 /* CaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				D7D1D1CE23569CBB0037EBD3 /* Service */,
 				D7D1D1BB23565A210037EBD3 /* Models */,
 				D7D1D1C823565B310037EBD3 /* ViewModels */,
 				D7D1D1B423563DDB0037EBD3 /* Controllers */,
@@ -206,6 +212,22 @@
 				D7D1D1C923565B5C0037EBD3 /* StockViewModelTests.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D7D1D1CD23569C500037EBD3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D7D1D1D123569D060037EBD3 /* StockClient.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D7D1D1CE23569CBB0037EBD3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D7D1D1CF23569CD20037EBD3 /* StockClientTests.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +338,7 @@
 				D7D1D18F23563C260037EBD3 /* StockListViewController.swift in Sources */,
 				D7D1D1CC23565B9C0037EBD3 /* StockViewModel.swift in Sources */,
 				D7D1D18B23563C260037EBD3 /* AppDelegate.swift in Sources */,
+				D7D1D1D223569D060037EBD3 /* StockClient.swift in Sources */,
 				D7D1D1C523565AA70037EBD3 /* Stock.swift in Sources */,
 				D7D1D1B823563F1B0037EBD3 /* StockDetailCell.swift in Sources */,
 			);
@@ -328,6 +351,7 @@
 				D7D1D1BD23565A4A0037EBD3 /* StockTest.swift in Sources */,
 				D7D1D1CA23565B5C0037EBD3 /* StockViewModelTests.swift in Sources */,
 				D7D1D1B623563DF20037EBD3 /* StockListViewControllerTests.swift in Sources */,
+				D7D1D1D023569CD20037EBD3 /* StockClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
