@@ -20,12 +20,13 @@ class StockClient {
     }
     
     func fetchStocks(completion:@escaping (Stock?, Error?) -> Void) -> URLSessionDataTask{
-        let urlString = "https://api.worldtradingdata.com/api/v1/stock?symbol=DJI,NKE,AAPL,MSFT&api_token=d57PoxaqI6RfRw9FBwBZIibckA8b6sIRQ2mePCy23vDrxQnTqtNDywoeQlMS"
+        let token = Bundle.main.object(forInfoDictionaryKey: "token") as? String ?? ""
+        let urlString = "https://api.worldtradingdata.com/api/v1/stock?symbol=TMUS,BA,NKE,AAPL,MSFT&api_token=\(token)"
         let url = URL(string: urlString)
         
         let task = session.dataTask(with: url!) { (data, resp, err) in
             if let err = err {
-                print("Failed to fetch albums:", err)
+                print("Failed to fetch stocks:", err)
                 completion(nil, nil)
                 
                 return

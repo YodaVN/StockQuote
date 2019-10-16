@@ -12,6 +12,7 @@ class StockListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var viewModels: [StockViewModel] = []
+    var delegate: DelegateDatasourceProtocol?
     let cellId = "StockCell"
     
     override func viewDidLoad() {
@@ -55,8 +56,6 @@ class StockListViewController: UIViewController {
                 self.viewModels.append(StockViewModel(datum: data[i]))
             }
             
-            print(data)
-            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -78,6 +77,10 @@ extension StockListViewController: UITableViewDataSource {
         viewModel.config(cell)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
 

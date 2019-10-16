@@ -24,6 +24,7 @@
 		D7D1D1D023569CD20037EBD3 /* StockClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1CF23569CD20037EBD3 /* StockClientTests.swift */; };
 		D7D1D1D223569D060037EBD3 /* StockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1D123569D060037EBD3 /* StockClient.swift */; };
 		D7D1D1D62356D2670037EBD3 /* Stock_InvalidJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D1D32356A4D90037EBD3 /* Stock_InvalidJSON.json */; };
+		D7D1D1D82356F8850037EBD3 /* StockDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1D72356F8850037EBD3 /* StockDetailViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D7D1D1CF23569CD20037EBD3 /* StockClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockClientTests.swift; sourceTree = "<group>"; };
 		D7D1D1D123569D060037EBD3 /* StockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockClient.swift; sourceTree = "<group>"; };
 		D7D1D1D32356A4D90037EBD3 /* Stock_InvalidJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Stock_InvalidJSON.json; sourceTree = "<group>"; };
+		D7D1D1D72356F8850037EBD3 /* StockDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				D7D1D1B523563DF20037EBD3 /* StockListViewControllerTests.swift */,
+				D7D1D1D72356F8850037EBD3 /* StockDetailViewControllerTests.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D1D1D82356F8850037EBD3 /* StockDetailViewControllerTests.swift in Sources */,
 				D7D1D1BD23565A4A0037EBD3 /* StockTest.swift in Sources */,
 				D7D1D1CA23565B5C0037EBD3 /* StockViewModelTests.swift in Sources */,
 				D7D1D1B623563DF20037EBD3 /* StockListViewControllerTests.swift in Sources */,
