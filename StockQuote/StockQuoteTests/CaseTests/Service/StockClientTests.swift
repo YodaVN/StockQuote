@@ -57,7 +57,9 @@ class StockClientTests: XCTestCase {
     
     func testFetchStocks_withExpectedURLHostAndPath() {
         sut.session = mockSession
-        sut.fetchStocks(completion: { (stocks, error) in })
+        var dataTask: URLSessionDataTask? = sut.fetchStocks(completion: { (stocks, error) in })
+        NSLog("\(String(describing: dataTask))")
+        dataTask = nil
         XCTAssertEqual(mockSession.cachedUrl?.host, "api.worldtradingdata.com")
         XCTAssertEqual(mockSession.cachedUrl?.path, "/api/v1/stock")
     }

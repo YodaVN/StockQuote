@@ -12,6 +12,7 @@ class StockListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var viewModels: [StockViewModel] = []
+    var dataTask: URLSessionDataTask?
     let cellId = "StockCell"
     
     override func viewDidLoad() {
@@ -41,8 +42,11 @@ class StockListViewController: UIViewController {
     }
     
     func refreshData() {
-        StockClient.shared.fetchStocks { (stocks, error) in
+        guard dataTask == nil else { return }
+        
+        dataTask = StockClient.shared.fetchStocks { (stocks, error) in
             self.viewModels = []
+            self.dataTask = nil
             
             guard let data = stocks?.data else {
                 DispatchQueue.main.async {
