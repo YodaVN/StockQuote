@@ -10,60 +10,61 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockCell" rowHeight="80" id="HgM-F1-26m" customClass="StockDetailCell" customModule="StockQuote" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockCell" id="HgM-F1-26m" customClass="StockDetailCell" customModule="StockQuote" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="331" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HgM-F1-26m" id="irI-Sy-kkl" customClass="StockDetailCell" customModule="StockQuote" customModuleProvider="target">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HgM-F1-26m" id="irI-Sy-kkl" customClass="StockDetailCell" customModule="StockQuote" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="331" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AAPL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BD4-92-PY4">
-                        <rect key="frame" x="20" y="14" width="42" height="21"/>
+                        <rect key="frame" x="20" y="14" width="78" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Inc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uz9-nA-Z07">
-                        <rect key="frame" x="20" y="43" width="72" height="21"/>
+                        <rect key="frame" x="20" y="43" width="184" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="235.93" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x0f-Sf-43m">
-                        <rect key="frame" x="256" y="14" width="55" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+0.02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fZG-St-1Gm">
-                        <rect key="frame" x="266" y="43" width="45" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 0.02" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fZG-St-1Gm">
+                        <rect key="frame" x="248" y="43" width="63" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdasdasdasdasdasd" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x0f-Sf-43m">
+                        <rect key="frame" x="223" y="15" width="88" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="88" id="HIq-Sj-Mgm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rAC-Yu-SP7"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="BD4-92-PY4" secondAttribute="trailing" constant="233" id="8OR-Od-0Qm"/>
+                    <constraint firstItem="fZG-St-1Gm" firstAttribute="top" secondItem="x0f-Sf-43m" secondAttribute="bottom" constant="7" id="8iy-my-IVm"/>
                     <constraint firstItem="BD4-92-PY4" firstAttribute="leading" secondItem="irI-Sy-kkl" secondAttribute="leading" constant="20" id="J16-u0-ZTw"/>
                     <constraint firstItem="BD4-92-PY4" firstAttribute="top" secondItem="irI-Sy-kkl" secondAttribute="top" constant="14" id="N79-rl-4Tu"/>
+                    <constraint firstItem="x0f-Sf-43m" firstAttribute="top" secondItem="irI-Sy-kkl" secondAttribute="top" constant="15" id="OY7-ZR-L45"/>
                     <constraint firstItem="uz9-nA-Z07" firstAttribute="leading" secondItem="irI-Sy-kkl" secondAttribute="leading" constant="20" id="b2a-Nm-S1L"/>
+                    <constraint firstAttribute="trailing" secondItem="x0f-Sf-43m" secondAttribute="trailing" constant="20" id="ipt-b4-J5k"/>
                     <constraint firstItem="uz9-nA-Z07" firstAttribute="top" secondItem="BD4-92-PY4" secondAttribute="bottom" constant="8" id="oWY-Ht-87W"/>
-                    <constraint firstItem="fZG-St-1Gm" firstAttribute="baseline" secondItem="uz9-nA-Z07" secondAttribute="baseline" id="pBa-fM-L41"/>
-                    <constraint firstItem="fZG-St-1Gm" firstAttribute="trailing" secondItem="x0f-Sf-43m" secondAttribute="trailing" id="rgW-PJ-0dU"/>
+                    <constraint firstAttribute="trailing" secondItem="uz9-nA-Z07" secondAttribute="trailing" constant="127" id="tKS-DE-3DA"/>
+                    <constraint firstAttribute="trailing" secondItem="fZG-St-1Gm" secondAttribute="trailing" constant="20" id="tzl-D3-xtq"/>
+                    <constraint firstItem="fZG-St-1Gm" firstAttribute="leading" secondItem="irI-Sy-kkl" secondAttribute="leading" constant="248" id="yGy-bf-pe8"/>
                 </constraints>
-                <viewLayoutGuide key="safeArea" id="XLa-j0-nMS"/>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstItem="irI-Sy-kkl" firstAttribute="leading" secondItem="HgM-F1-26m" secondAttribute="leading" id="dLD-yo-dHb"/>
-                <constraint firstAttribute="bottom" secondItem="irI-Sy-kkl" secondAttribute="bottom" id="h66-UI-uac"/>
-                <constraint firstItem="irI-Sy-kkl" firstAttribute="top" secondItem="HgM-F1-26m" secondAttribute="top" id="ofD-F7-3Hg"/>
-                <constraint firstAttribute="trailing" secondItem="irI-Sy-kkl" secondAttribute="trailing" id="teP-HB-WD7"/>
-            </constraints>
-            <viewLayoutGuide key="safeArea" id="R0F-EO-kUH"/>
             <connections>
                 <outlet property="dayChange" destination="fZG-St-1Gm" id="RMJ-ex-aTa"/>
                 <outlet property="name" destination="uz9-nA-Z07" id="0iu-zR-pL2"/>

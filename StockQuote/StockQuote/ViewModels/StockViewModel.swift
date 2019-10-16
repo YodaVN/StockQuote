@@ -63,7 +63,15 @@ class StockViewModel {
         cell.symbol.text = symbol
         cell.name.text = name
         cell.price.text = price
-        cell.dayChange.text = String(dayChange)
+        
+        var dayChangeString = String(dayChange)
+        if dayChange >= 0 {
+            cell.dayChange.backgroundColor = .green
+            dayChangeString = "+\(dayChangeString)"
+        } else {
+            cell.dayChange.backgroundColor = .red
+        }
+        cell.dayChange.text = dayChangeString
     }
 }
 

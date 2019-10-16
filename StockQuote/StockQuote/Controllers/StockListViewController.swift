@@ -23,14 +23,44 @@ class StockListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "StockDetailCell", bundle: nil), forCellReuseIdentifier: cellId)
-        
-//        StockClient.shared.fetchStocks { (stocks, error) in
-//
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        refreshData()
+    }
+    
+    func createAlert() {
+        let alert = UIAlertController(title: "Can't call API right now, please try again later", message: "", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+    
+    func refreshData() {
+        StockClient.shared.fetchStocks { (stocks, error) in
+            self.viewModels = []
+            
+            guard let data = stocks?.data else {
+                DispatchQueue.main.async {
+                    self.createAlert()
+                }
+                
+                return
+            }
+            
+            for i in 0..<data.count {
+                self.viewModels.append(StockViewModel(datum: data[i]))
+            }
+            
+            print(data)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -41,6 +71,9 @@ extension StockListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! StockDetailCell
+        cell.selectionStyle = .none
+        cell.dayChange.clipsToBounds = true
+        cell.dayChange.layer.cornerRadius = 5
         let viewModel = viewModels[indexPath.row]
         viewModel.config(cell)
         
