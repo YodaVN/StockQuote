@@ -38,7 +38,7 @@ class StockViewModelTests: XCTestCase {
     //MARK: when
     func whenConfigureStockDetailCell() {
         givenStockDetailCell()
-        sut.configure(cell)
+        sut.config(cell)
     }
     
     func setUpViewModel(symbol: String = "NKE", name: String = "NIKE", currency: String = "USD", price: String = "35.6", priceOpen: String = "12", dayHigh: String = "50", dayLow: String = "20", the52_WeekHigh: String = "70", the52_WeekLow: String = "10", dayChange: String = "-0.5", changePct: String = "3%", closeYesterday: String = "40", marketCap: String = "123", volume: String = "5", volumeAvg: String = "5", shares: String = "5", stockExchangeLong: String = "5", stockExchangeShort: String = "6", timezone: String = "EST", timezoneName: String = "+7", gmtOffset: String = "+6", lastTradeTime: String = "2019-10-15 13:16:51", pe: String = "pe", eps: String = "eps") {

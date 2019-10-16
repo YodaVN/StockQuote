@@ -59,10 +59,16 @@ class StockViewModel {
         }
     }
     
-    func configure(_ cell: StockDetailCell) {
+    func config(_ cell: StockDetailCell) {
         cell.symbol.text = symbol
         cell.name.text = name
         cell.price.text = price
         cell.dayChange.text = String(dayChange)
     }
+}
+
+extension StockViewModel: Equatable {
+  static func == (lhs: StockViewModel, rhs: StockViewModel) -> Bool {
+    return lhs.datum == rhs.datum
+  }
 }

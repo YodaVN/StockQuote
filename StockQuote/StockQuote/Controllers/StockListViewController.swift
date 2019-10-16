@@ -11,7 +11,7 @@ import UIKit
 class StockListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: [StockViewModel] = []
+    var viewModels: [StockViewModel] = []
     let cellId = "StockCell"
     
     override func viewDidLoad() {
@@ -31,12 +31,18 @@ class StockListViewController: UIViewController {
 }
 
 extension StockListViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! StockDetailCell
+        let viewModel = viewModels[indexPath.row]
+        viewModel.config(cell)
         
         return cell
     }
