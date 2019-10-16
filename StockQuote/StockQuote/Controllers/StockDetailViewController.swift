@@ -16,7 +16,13 @@ class StockDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Oct 15, 2019"
+    }
+    
+    func updateUI(symbol: String, name: String, dayHigh: String, dayLow: String, dayChange: String) {
+        self.symbol.text = symbol
+        self.name.text = name
+        self.dayLow.text = "Day Low: $\(dayLow)"
+        self.dayHigh.text = "Day High: $\(dayHigh)"
+        self.title = dayChange
     }
 }

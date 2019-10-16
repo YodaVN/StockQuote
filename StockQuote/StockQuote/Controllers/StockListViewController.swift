@@ -80,6 +80,10 @@ extension StockListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stockDetailViewController = StockDetailViewController(nibName: "StockDetailView", bundle: nil)
+        let model = viewModels[indexPath.row]
+        stockDetailViewController.loadViewIfNeeded()
+        
+        stockDetailViewController.updateUI(symbol: model.symbol, name: model.name, dayHigh: model.dayHigh, dayLow: model.dayLow, dayChange: model.lastTradeTime)
         self.navigationController?.pushViewController(stockDetailViewController, animated: true)
     }
 }

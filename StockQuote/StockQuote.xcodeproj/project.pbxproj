@@ -27,10 +27,18 @@
 		D7D1D1D82356F8850037EBD3 /* StockDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1D72356F8850037EBD3 /* StockDetailViewControllerTests.swift */; };
 		D7D1D1DA2356F9590037EBD3 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1D92356F9590037EBD3 /* StockDetailViewController.swift */; };
 		D7D1D1DC2356F9770037EBD3 /* StockDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D1D1DB2356F9770037EBD3 /* StockDetailView.xib */; };
+		D7D1D1E4235706570037EBD3 /* StockQuoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D1E3235706570037EBD3 /* StockQuoteUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		D7D1D19E23563C280037EBD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7D1D17F23563C260037EBD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7D1D18623563C260037EBD3;
+			remoteInfo = StockQuote;
+		};
+		D7D1D1E6235706570037EBD3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D7D1D17F23563C260037EBD3 /* Project object */;
 			proxyType = 1;
@@ -64,6 +72,9 @@
 		D7D1D1D72356F8850037EBD3 /* StockDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		D7D1D1D92356F9590037EBD3 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		D7D1D1DB2356F9770037EBD3 /* StockDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockDetailView.xib; sourceTree = "<group>"; };
+		D7D1D1E1235706570037EBD3 /* StockQuoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockQuoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7D1D1E3235706570037EBD3 /* StockQuoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteUITests.swift; sourceTree = "<group>"; };
+		D7D1D1E5235706570037EBD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +92,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7D1D1DE235706570037EBD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,6 +107,7 @@
 			children = (
 				D7D1D18923563C260037EBD3 /* StockQuote */,
 				D7D1D1A023563C280037EBD3 /* StockQuoteTests */,
+				D7D1D1E2235706570037EBD3 /* StockQuoteUITests */,
 				D7D1D18823563C260037EBD3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +117,7 @@
 			children = (
 				D7D1D18723563C260037EBD3 /* StockQuote.app */,
 				D7D1D19D23563C280037EBD3 /* StockQuoteTests.xctest */,
+				D7D1D1E1235706570037EBD3 /* StockQuoteUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +262,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		D7D1D1E2235706570037EBD3 /* StockQuoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D7D1D1E3235706570037EBD3 /* StockQuoteUITests.swift */,
+				D7D1D1E5235706570037EBD3 /* Info.plist */,
+			);
+			path = StockQuoteUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +309,24 @@
 			productReference = D7D1D19D23563C280037EBD3 /* StockQuoteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D7D1D1E0235706570037EBD3 /* StockQuoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7D1D1E8235706570037EBD3 /* Build configuration list for PBXNativeTarget "StockQuoteUITests" */;
+			buildPhases = (
+				D7D1D1DD235706570037EBD3 /* Sources */,
+				D7D1D1DE235706570037EBD3 /* Frameworks */,
+				D7D1D1DF235706570037EBD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7D1D1E7235706570037EBD3 /* PBXTargetDependency */,
+			);
+			name = StockQuoteUITests;
+			productName = StockQuoteUITests;
+			productReference = D7D1D1E1235706570037EBD3 /* StockQuoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -296,6 +343,10 @@
 					D7D1D19C23563C280037EBD3 = {
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
+						TestTargetID = D7D1D18623563C260037EBD3;
+					};
+					D7D1D1E0235706570037EBD3 = {
+						CreatedOnToolsVersion = 11.0;
 						TestTargetID = D7D1D18623563C260037EBD3;
 					};
 				};
@@ -315,6 +366,7 @@
 			targets = (
 				D7D1D18623563C260037EBD3 /* StockQuote */,
 				D7D1D19C23563C280037EBD3 /* StockQuoteTests */,
+				D7D1D1E0235706570037EBD3 /* StockQuoteUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -339,6 +391,13 @@
 				D7D1D1C223565A850037EBD3 /* Stock_ValidJSON.json in Resources */,
 				D7D1D1C023565A7B0037EBD3 /* Datum.json in Resources */,
 				D7D1D1D62356D2670037EBD3 /* Stock_InvalidJSON.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D1D1DF235706570037EBD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +430,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7D1D1DD235706570037EBD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7D1D1E4235706570037EBD3 /* StockQuoteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -378,6 +445,11 @@
 			isa = PBXTargetDependency;
 			target = D7D1D18623563C260037EBD3 /* StockQuote */;
 			targetProxy = D7D1D19E23563C280037EBD3 /* PBXContainerItemProxy */;
+		};
+		D7D1D1E7235706570037EBD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7D1D18623563C260037EBD3 /* StockQuote */;
+			targetProxy = D7D1D1E6235706570037EBD3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -590,6 +662,46 @@
 			};
 			name = Release;
 		};
+		D7D1D1E9235706570037EBD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W92HWWDY8H;
+				INFOPLIST_FILE = StockQuoteUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "T-Mobile.StockQuoteUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StockQuote;
+			};
+			name = Debug;
+		};
+		D7D1D1EA235706570037EBD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W92HWWDY8H;
+				INFOPLIST_FILE = StockQuoteUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "T-Mobile.StockQuoteUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StockQuote;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -616,6 +728,15 @@
 			buildConfigurations = (
 				D7D1D1AA23563C280037EBD3 /* Debug */,
 				D7D1D1AB23563C280037EBD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7D1D1E8235706570037EBD3 /* Build configuration list for PBXNativeTarget "StockQuoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7D1D1E9235706570037EBD3 /* Debug */,
+				D7D1D1EA235706570037EBD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

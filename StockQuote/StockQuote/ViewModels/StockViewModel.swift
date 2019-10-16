@@ -50,7 +50,7 @@ class StockViewModel {
         dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM dd, yyyy HH:mm:ss"
+        dateFormatterPrint.dateFormat = "MMM dd, yyyy"
         
         if let date = dateFormatterGet.date(from: lastTradeTime) {
             return (dateFormatterPrint.string(from: date))
