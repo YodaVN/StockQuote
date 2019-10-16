@@ -16,6 +16,11 @@ class StockDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        symbol.accessibilityIdentifier = "label--articleSymbol"
+        name.accessibilityIdentifier = "label--articleName"
+        dayHigh.accessibilityIdentifier = "label--articleDayHigh"
+        dayHigh.accessibilityIdentifier = "button--articleDayHigh"
     }
     
     func updateUI(symbol: String, name: String, dayHigh: String, dayLow: String, dayChange: String) {

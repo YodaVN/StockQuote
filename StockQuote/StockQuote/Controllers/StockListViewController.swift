@@ -19,6 +19,7 @@ class StockListViewController: UIViewController {
         
         self.navigationItem.largeTitleDisplayMode = .always
         
+        tableView.accessibilityIdentifier = "table--articleTableView"
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self

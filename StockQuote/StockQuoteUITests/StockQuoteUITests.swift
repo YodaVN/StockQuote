@@ -12,11 +12,14 @@ import XCTest
 class StockQuoteUITests: XCTestCase {
     
     var sut: XCUIApplication!
+    var articleTableView: XCUIElement!
 
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
         sut = XCUIApplication()
+        
+        articleTableView = sut.tables["table--articleTableView"]
     }
 
     override func tearDown() {
@@ -24,21 +27,43 @@ class StockQuoteUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testTableInteraction() {
+    func test_tableInteraction() {
+        //when
         sut.launch()
      
-        // Assert that we are displaying the tableview
-        let articleTableView = sut.tables["table--articleTableView"]
-     
+        //then
         XCTAssertTrue(articleTableView.exists, "The article tableview exists")
     }
+    
+    func test_checkSuccessGoToDetail() {
+        //given
+        let tableCells = articleTableView.cells
+        
+        //when
+        sut.launch()
+        
+        //then
+        if tableCells.count > 0 {
+            let count: Int = (tableCells.count - 1)
+         
+            let promise = expectation(description: "Wait for tableCells to load")
+         
+            for i in stride(from: 0, to: count , by: 1) {
+                let tableCell = tableCells.element(boundBy: i)
+                XCTAssertTrue(tableCell.exists, "The \(i) cell is in place on the table")
+                tableCell.tap()
+         
+                if i == (count - 1) {
+                    promise.fulfill()
+                }
 
-    func testLaunchPerformance() {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
+                sut.navigationBars.buttons.element(boundBy: 0).tap()
             }
+            waitForExpectations(timeout: 10, handler: nil)
+            XCTAssertTrue(true, "Finished UI testing tableCells")
+         
+        } else {
+            XCTAssert(false, "Can't find any tableCells")
         }
     }
 }
